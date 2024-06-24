@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style_output.css')}}"
+    />
+    <title>Devise Money</title>
+  </head>
+  <body class="flex bg-blue-950 justify-center items-center h-screen">
+    <div
+      class="flex flex-col bg-white bg-transparent p-9 rounded-md w-3/4 h-2/3"
+    >
+      <p class="text-blue-500 font-bold sm:text-3xl text-center mb-5">
+        CONVERTIR LA MONNAIE
+      </p>
+      <form method="post" class="flex flex-col h-3/4">
+        <div class="flex lg:flex-row sm:flex-col justify-around">
+          <div class="sm:w-1/4">
+            <p class="font-semibold text-blue-950 sm:text-xl">
+              Dollars Américain
+            </p>
+            <div
+              class="flex flex-row bg-blue-500 justify-center items-center p-2 rounded-md w-3/4"
+            >
+              <input
+                type="text"
+                value="{{data.dollar}}"
+                name="dollar"
+                class="bg-blue-500 text-white text-base text-center rounded-md font-bold mr-2 p-0 w-2/4"
+              />
+              <p class="bg-blue-500 text-white text-lg font-extrabold">$</p>
+            </div>
+          </div>
+          <div class="sm:w-1/4">
+            <p class="font-semibold text-blue-950 sm:text-xl">Taux d'échange</p>
+            <div
+              class="flex flex-row bg-blue-500 justify-center items-center p-3 rounded-md w-3/4"
+            >
+              <input
+                type="text"
+                value="{{data.taux}}"
+                name="taux"
+                class="bg-blue-500 text-white text-base text-center rounded-md font-bold mr-2 p-0 w-2/4"
+              />
+            </div>
+          </div>
+          <div class="sm:1/4">
+            <p class="font-semibold text-blue-950 sm:text-xl">
+              Franc Burundais
+            </p>
+            <div
+              class="flex flex-row bg-blue-500 justify-center items-center p-3 rounded-md"
+            >
+              <p
+                type="text"
+                value="{{franc_bu}}"
+                class="bg-blue-500 text-white text-base text-center rounded-md font-bold mr-2 p-0"
+              >
+                {{data.montant_converti}}
+              </p>
+              <p class="bg-blue-500 text-white text-md font-extrabold">fbu</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bg-blue-500 rounded-2xl p-4 w-2/4 m-auto text-white font-semibold sm:text-1xl self-center"
+        >
+          Convertir
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
